@@ -1,0 +1,79 @@
+#include<bits/stdc++.h>                                 
+#define ll         long long
+#define ull        unsigned long long
+#define fastread() (ios_base::sync_with_stdio(false),cin.tie(NULL));
+#define f1(i,a,b)  for(int i=a;i<b;i++)
+#define f2(i,a,b)  for(int i=a;i<=b;i++)
+#define f3(i,a,b)  for(int i=a;i>=b;i++)
+using namespace std;
+int main()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        int a,b,c,r;
+        cin>>a>>b>>c>>r;
+        if(a==b)
+            cout<<0<<endl;
+        else if(a<b)
+        {
+            int left=c-r;   //-1
+            int right=c+r;   //3
+             if(a>left and a>=right)
+                cout<<b-a<<endl;
+            else if(left>=b and right>b)
+                cout<<b-a<<endl;
+            else if(left>=a and right<=b)       
+            {
+              int leftr=left-a;
+              int rightr=b-right;
+              cout<<leftr+rightr<<endl;
+            }
+            else if(left>=a and right>b)
+            {
+                int leftr=left-a;
+                cout<<leftr<<endl;
+            }
+            else if(a>left and right<b)
+            {
+                int rightr=b-right;     //35
+                cout<<rightr<<endl; 
+            }
+            else if(a>left and right>=b)
+            {
+                cout<<0<<endl;
+            }
+        }
+        else
+        {
+            swap(a,b);
+            int left=c-r;
+            int right=c+r;
+            if(a>left and a>=right)
+                cout<<b-a<<endl;
+            else if(left>=b and right>b)
+                cout<<b-a<<endl;
+            else if(left>=a and right<=b)
+            {
+              int leftr=left-a;
+              int rightr=b-right;
+              cout<<leftr+rightr<<endl;
+            }
+            else if(left>=a and right>b)
+            {
+                int leftr=left-a;
+                cout<<leftr<<endl;
+            }
+            else if(a>left and right<b)
+            {
+                int rightr=b-right;
+                cout<<rightr<<endl;
+            }
+            else if(a>left and right>=b)
+            {
+                cout<<0<<endl;
+            }
+        }
+    }
+}
