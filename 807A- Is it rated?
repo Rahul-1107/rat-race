@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>                                 
+#define ll         long long
+#define ull        unsigned long long
+#define fastread() (ios_base::sync_with_stdio(false),cin.tie(NULL));
+#define f1(i,a,b)  for(int i=a;i<b;i++)
+#define f2(i,a,b)  for(int i=a;i<=b;i++)
+#define f3(i,a,b)  for(int i=a;i>=b;i++)
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n],b[n];
+    bool flag=false;
+f1(i,0,n)
+{
+cin>>a[i]>>b[i];
+if(a[i]!=b[i])
+flag=true;
+}
+if(flag)
+{
+    cout<<"rated"<<endl;
+return 0;
+}
+for(int i=0;i<n;i++)
+{
+    for(int j=i+1;j<n;j++)
+    {
+        if(a[i]<a[j])
+            flag=true;
+    }
+}
+if(flag)
+    cout<<"unrated"<<endl;
+else
+    cout<<"maybe"<<endl;
+}
