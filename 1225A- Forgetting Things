@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>                                 
+#define ll         long long
+#define ull        unsigned long long
+#define fastread() (ios_base::sync_with_stdio(false),cin.tie(NULL));
+#define f1(i,a,b)  for(int i=a;i<b;i++)
+#define f2(i,a,b)  for(int i=a;i<=b;i++)
+#define f3(i,a,b)  for(int i=a;i>=b;i++)
+using namespace std;
+int main()
+{
+      int a,b;
+      cin>>a>>b;
+      if(b-a==1)
+        cout<<a*10+9<<" "<<b*10;
+       else if(a==b)
+        cout<<a*10+1<<" "<<b*10+2;
+    else if(a==9 and b==1)
+        cout<<a<<" "<<b*10;
+    else
+        cout<<-1;
+}
