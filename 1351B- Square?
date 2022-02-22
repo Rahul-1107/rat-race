@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>                                 
+#define ll         long long
+#define ull        unsigned long long
+#define fastread() (ios_base::sync_with_stdio(false),cin.tie(NULL));
+#define f1(i,a,b)  for(int i=a;i<b;i++)
+#define f2(i,a,b)  for(int i=a;i<=b;i++)
+#define f3(i,a,b)  for(int i=a;i>=b;i++)
+using namespace std;
+int main()
+{
+    ll T;
+    cin>>T;
+    while(T--)
+    {
+        int a1,b1,a2,b2;
+        cin>>a1>>b1>>a2>>b2;
+        if(b1>a1)
+            swap(a1,b1);
+        if(b2>a2)
+            swap(a2,b2);
+        if(a1==a2)
+        {
+            if(b1+b2==a1)
+                cout<<"YES"<<endl;
+            else
+                cout<<"NO"<<endl;
+        }
+        else if(a1==b2)
+        {
+            if(b1+a2==a1)
+                cout<<"YES"<<endl;
+            else
+                cout<<"NO"<<endl;
+        }
+        else if(b1==a2)
+        {
+            if(a1+b2==a2)
+                cout<<"YES"<<endl;
+            else
+                cout<<"NO"<<endl;
+        }
+        else if(b1==b2)
+        {
+            if(a1+a2==b1)
+                cout<<"YES"<<endl;
+            else
+                cout<<"NO"<<endl;
+        }
+        else
+            cout<<"NO"<<endl;
+    }
+}
