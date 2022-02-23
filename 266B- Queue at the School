@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+#define vi vector<int>
+#define pii <pair<int,int>>
+#define vii vector<pii>
+#define rep(i,a,b) for(int i=a;i<b;i++)
+#define mp map<int,int>
+int main()
+{
+int n,t;
+string s,r;
+cin>>n>>t>>s;
+while(t--)
+{
+    r=s;
+    for(int i=0;i<s.length()-1;)
+    {
+        if(s[i]=='B' and s[i+1]=='G')
+        {
+            swap(s[i],s[i+1]);
+        i+=2;
+    }
+    else
+        i++;
+    }
+}
+cout<<s;
+}
