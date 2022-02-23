@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+#define vi vector<int>
+#define pii <pair<int,int>>
+#define vii vector<pii>
+#define rep(i,a,b) for(int i=a;i<b;i++)
+#define repe(i,c,d) for(int i=c;i<=d;i++)
+#define mp map<int,int>
+const int INF=1e7;
+int main()
+{
+   int t,n,x;
+   cin>>t;
+   while(t--)
+   {
+    int c=0,r=1000;
+    cin>>n;
+    int a[n];
+    rep(i,0,n)
+    cin>>a[i];
+    sort(a,a+n);
+    c=a[0];
+    rep(i,1,n)
+    {
+      if(a[i]-a[i-1]<r)
+        r=a[i]-a[i-1];
+    }
+    cout<<r<<endl;
+}
+}
