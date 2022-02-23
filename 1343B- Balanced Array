@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+#define vi vector<int>
+#define pii <pair<int,int>>
+#define vii vector<pii>
+#define rep(i,a,b) for(int i=a;i<b;i++)
+#define repe(i,c,d) for(int i=c;i<=d;i++)
+#define mp map<int,int>
+const int INF=1e9;
+int main()
+{
+    int t;
+    ll n,s1,s2;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        s1=s2=0;
+        if(n%4!=0)
+            cout<<"NO"<<endl;
+        else
+        {
+            cout<<"YES"<<endl;
+            for(int i=2;i<=n;i+=2)
+            {
+                cout<<i<<" ";
+                s1+=i;
+            }
+         for(int i=1;i<=n-2;i+=2)
+            {
+                cout<<i<<" ";
+                s2+=i;
+            }
+            cout<<s1-s2<<endl;
+        }
+    }
+}
