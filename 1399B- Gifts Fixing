@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+#define vi vector<int>
+#define pii <pair<int,int>>
+#define vii vector<pii>
+#define rep(i,a,b) for(int i=a;i<b;i++)
+#define repe(i,c,d) for(int i=c;i<=d;i++)
+#define mp map<int,int>
+const int INF=1e9;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        ll n;
+        cin>>n;
+        int a[n],b[n];
+        int mina=1e9,minb=1e9;
+        ll ans(0);
+        for(int i=0;i<n;i++)
+        {
+            cin>>a[i];
+            mina=min(mina,a[i]);
+        }
+     for(int i=0;i<n;i++)
+        {
+            cin>>b[i];
+            minb=min(minb,b[i]);
+        }
+  for(int i=0;i<n;i++)
+  {
+    ans+=max(a[i]-mina,b[i]-minb);
+  }
+  cout<<ans<<endl;
+    }
+}
