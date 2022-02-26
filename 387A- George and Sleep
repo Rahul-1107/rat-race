@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>                                 
+#define ll         long long
+#define ull        unsigned long long
+#define fastread() (ios_base::sync_with_stdio(false),cin.tie(NULL));
+#define f1(i,a,b)  for(int i=a;i<b;i++)
+#define f2(i,a,b)  for(int i=a;i<=b;i++)
+#define f3(i,a,b)  for(int i=a;i>=b;i--)
+using namespace std;
+int main()
+{
+  ll h,hh,m,mm;
+  char c;
+  cin>>h>>c>>m;
+  cin>>hh>>c>>mm;
+  ll w=h*60+m;
+  ll s=hh*60+mm;
+  ll time=w-s;
+  if(time<0)
+    time=24*60+time;
+printf("%.2lld:%.2lld",time/60,time%60);
+}
