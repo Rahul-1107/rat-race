@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>                                 
+#define ll         long long
+#define ull        unsigned long long
+#define fastread() (ios_base::sync_with_stdio(false),cin.tie(NULL));
+#define f1(i,a,b)  for(int i=a;i<b;i++)
+#define f2(i,a,b)  for(int i=a;i<=b;i++)
+#define f3(i,a,b)  for(int i=a;i>=b;i--)
+using namespace std;
+int main()
+{
+    fastread();
+    int n,m;
+    cin>>n>>m;
+    int a[n],b[m];
+    f1(i,0,n)
+    cin>>a[i];
+    f1(i,0,m)
+    cin>>b[i];
+    sort(a,a+n);
+    sort(b,b+m);
+    map<int,bool>ma;
+    bool flag=false;
+    for(auto i:a)
+    {
+        ma[i]=true;
+    }
+    for(auto i:b)
+    {
+        if(ma[i]==true)
+        {
+            flag=true;
+            cout<<i;
+            break;
+        }
+    }
+    if(!flag)
+    {
+    int m1=*min_element(a,a+n);
+    int m2=*min_element(b,b+m);
+    if(m1==m2)
+        cout<<m1;
+    else
+    {
+        if(m1<m2)
+            cout<<m1<<m2;
+        else
+            cout<<m2<<m1;
+    }
+    }
+}
