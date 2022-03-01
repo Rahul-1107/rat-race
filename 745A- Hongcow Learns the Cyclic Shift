@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>                                 
+#define ll         long long
+#define ull        unsigned long long
+#define fastread() (ios_base::sync_with_stdio(false),cin.tie(NULL));
+#define f1(i,a,b)  for(int i=a;i<b;i++)
+#define f2(i,a,b)  for(int i=a;i<=b;i++)
+#define f3(i,a,b)  for(int i=a;i>=b;i--)
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    int n=s.length();
+    int c=n;
+    vector<string>v;
+    int d=1;
+    bool flag=false;
+    v.push_back(s);
+    while(n--)
+    {
+        string t="";
+        t+=s[c-1];
+        t+=s.substr(0,c-1);
+       for(auto i:v)
+       {
+        if(i==t)
+        {
+            flag=true;
+            break;
+        }
+       }
+       if(!flag)
+       {
+        v.push_back(t);
+        d++;
+       }
+       s=t;
+    }
+    cout<<d;
+}
+    
