@@ -16,7 +16,6 @@ int main()
     cin>>a[i];
     f1(i,0,m)
     cin>>b[i];
-    sort(a,a+n);
     sort(b,b+m);
     map<int,bool>ma;
     bool flag=false;
