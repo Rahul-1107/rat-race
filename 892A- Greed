@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>                                 
+#define ll         long long
+#define ull        unsigned long long
+#define fastread() (ios_base::sync_with_stdio(false),cin.tie(NULL));
+#define f1(i,a,b)  for(int i=a;i<b;i++)
+#define f2(i,a,b)  for(int i=a;i<=b;i++)
+#define f3(i,a,b)  for(int i=a;i>=b;i--)
+using namespace std;
+int main()
+{
+    fastread();
+ll n,sum=0;
+cin>>n;
+ll a[n],b[n];
+f1(i,0,n)
+{
+    cin>>a[i];
+    sum+=a[i];
+}
+f1(i,0,n)
+cin>>b[i];
+sort(b,b+n);
+int left=0,right=n-1;
+while(left<right)
+{
+    if((b[left]+b[right])>=sum)
+    {
+        cout<<"YES";
+        return 0;
+    }
+    else 
+        left++;
+   
+}
+cout<<"NO";
+return 0;
+}
