@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>                                 
+#define ll         long long
+#define ull        unsigned long long
+#define fastread() (ios_base::sync_with_stdio(false),cin.tie(NULL));
+#define f1(i,a,b)  for(int i=a;i<b;i++)
+#define f2(i,a,b)  for(int i=a;i<=b;i++)
+#define f3(i,a,b)  for(int i=a;i>=b;i--)
+using namespace std;
+int main()
+{
+    fastread();
+char ch[101];
+bool haiku=true;
+int syll[3]={5,7,5};
+for(int j=0;j<3;j++)
+{
+    cin.getline(ch,sizeof(ch)/sizeof(ch[0]));
+int c=0;
+    for(int i=0;ch[i]!=0;i++)
+    {
+        if(ch[i]=='a' || ch[i]=='e' || ch[i]=='i' || ch[i]=='o' || ch[i]=='u' )
+            c++;
+    }
+    if(c!=syll[j])
+    {
+        haiku=false;
+        break;
+    }
+}
+cout<<(haiku?"YES":"NO");
+return 0;
+}
